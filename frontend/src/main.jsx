@@ -15,6 +15,7 @@ import AdminBlogDe from "./Admin/AdminBlogDe.jsx";
 import Blog from "./components.jsx/Blog.jsx";
 import BlogDetailPage from "./components.jsx/BlogDetails.jsx";
 import StudentsTable from "./Admin/ContactDetails.jsx";
+import FreelancerStudents from "./Admin/FreelancerContact.jsx";
 
 const router = createBrowserRouter([
   // {path : '/' , element : <App/>},
@@ -27,12 +28,13 @@ const router = createBrowserRouter([
 
   {
     path: "/admin",
-    element: <Dashboard />,
+    element:  <ProtectedRoute><Dashboard /></ProtectedRoute> ,
     children: [
       // {index : true , element :<ProtectedRoute><GovtLandingPage/></ProtectedRoute>},
       // {path: 'login'  , element :<AdminLogin/>},
       {
-        path: "adminBlog",
+        // path: "adminBlog",
+        index : true , 
         element: (
           <ProtectedRoute>
             <AdmibBlog />
@@ -52,6 +54,14 @@ const router = createBrowserRouter([
         element: (
           <ProtectedRoute>
             <StudentsTable />
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "freelancer",
+        element: (
+          <ProtectedRoute>
+            <FreelancerStudents/>
           </ProtectedRoute>
         ),
       },

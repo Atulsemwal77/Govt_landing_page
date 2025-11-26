@@ -8,6 +8,7 @@ const adminRoutes = require("./Routes/Admin")
 const blog_route = require('./Routes/blogRoute')
 const path = require('path');
 const studentRoutes = require('./Routes/studentRoutes')
+const freelancerStudentRouter = require('./freelancer/studentRouter')
 
 dotenv.config()
 
@@ -25,7 +26,8 @@ app.use(cookieParser());
 
 app.use("/api/admin", adminRoutes);
 app.use("/api/blogs", blog_route);
-app.use("/api/students", studentRoutes);
+app.use("/api/students", studentRoutes);  //for govt landing page
+app.use('/api/freelancerStudent', freelancerStudentRouter )
  
 app.use('/' , (req , res)=>{
     res.json("Welcome to backend")
