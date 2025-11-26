@@ -783,22 +783,31 @@ const GovtLandingPage = () => {
       </footer>
 
       <style jsx>{`
-        @keyframes marquee {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        .animate-marquee {
-          animation: marquee 40s linear infinite;
-          display: flex;
-        }
-        .animate-marquee:hover {
-          animation-play-state: paused;
-        }
-      `}</style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 40s linear infinite;
+    display: flex;
+  }
+  .animate-marquee:hover {
+    animation-play-state: paused;
+  }
+
+  /* 🔥 Mobile View — Speed Up Animation */
+  @media (max-width: 768px) {
+    .animate-marquee {
+      animation-duration: 10s; /* Change speed for mobile */
+    }
+  }
+`}</style>
+
     </div>
   );
 };

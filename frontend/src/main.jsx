@@ -16,6 +16,8 @@ import Blog from "./components.jsx/Blog.jsx";
 import BlogDetailPage from "./components.jsx/BlogDetails.jsx";
 import StudentsTable from "./Admin/ContactDetails.jsx";
 import FreelancerStudents from "./Admin/FreelancerContact.jsx";
+import FreelancerBlogModalPage from "./Admin/FreelancerBlog.jsx";
+import FreelancerBlogDetailPage from "./Admin/FreelancerBlogDetails.jsx";
 
 const router = createBrowserRouter([
   // {path : '/' , element : <App/>},
@@ -58,10 +60,26 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "freelancer",
+        path: "freelancer-student",
         element: (
           <ProtectedRoute>
             <FreelancerStudents/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "freelancer-blog",
+        element: (
+          <ProtectedRoute>
+            <FreelancerBlogModalPage/>
+          </ProtectedRoute>
+        ),
+      },
+      {
+        path: "freelancer-details/:id",
+        element: (
+          <ProtectedRoute>
+            <FreelancerBlogDetailPage/>
           </ProtectedRoute>
         ),
       },

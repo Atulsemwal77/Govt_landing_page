@@ -59,8 +59,11 @@ const Dashboard = () => {
           <SidebarLink to="/admin/contact" icon={FiUsers}>
             Contact
           </SidebarLink>
-          <SidebarLink to="/admin/freelancer" icon={FiUsers}>
-            freelancerContact
+          <SidebarLink to="/admin/freelancer-student" icon={FiUsers}>
+            freelancerContact 
+          </SidebarLink>
+          <SidebarLink to="/admin/freelancer-blog" icon={FiUsers}>
+            freelancer-blog
           </SidebarLink>
         </nav>
 
